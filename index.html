@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard - By LeonTechnologies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="scoreboard">
+        <div class="team">
+            <!-- Editable Team Name -->
+            <input type="text" value="Team 1" class="team-name">
+            <div id="team-score1" class="team-score1">0</div>
+            <div class="scoreboard__controls">
+                <button id="team1plus">+</button>
+                <button id="team1subtract">-</button>
+            </div>
+        </div>
+        
+        <div class="team">
+            <!-- Editable Team Name -->
+            <input type="text" value="Team 2" class="team-name">
+            <div id="team-score2" class="team-score2">0</div>
+            <div class="scoreboard__controls">
+                <button id="team2plus">+</button>
+                <button id="team2subtract">-</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Ensure the DOM is fully loaded before running script
+        document.addEventListener("DOMContentLoaded", () => {
+            // Team 1 Controls
+            const team1 = document.getElementById("team-score1");
+            const addButton1 = document.getElementById("team1plus");
+            const subtractButton1 = document.getElementById("team1subtract");
+
+            addButton1.addEventListener("click", () => {
+                team1.textContent = parseInt(team1.textContent) + 1;
+            });
+
+            subtractButton1.addEventListener("click", () => {
+                team1.textContent = parseInt(team1.textContent) - 1;
+            });
+
+            // Team 2 Controls
+            const team2 = document.getElementById("team-score2");
+            const addButton2 = document.getElementById("team2plus");
+            const subtractButton2 = document.getElementById("team2subtract");
+
+            addButton2.addEventListener("click", () => {
+                team2.textContent = parseInt(team2.textContent) + 1;
+            });
+
+            subtractButton2.addEventListener("click", () => {
+                team2.textContent = parseInt(team2.textContent) - 1;
+            });
+        });
+    </script>
+</body>
+</html>
